@@ -1,0 +1,16 @@
+server:
+  port: @eureka-port@
+
+eureka:
+  instance:
+    hostname: @eureka-hostname@
+  # eureka server本身也是一个eureka client, 所以需要配置 register-with-eureka, fetch-registry 为 false 来表明自己是一个 eureka server
+  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost2:2001/eureka/
+
+spring:
+  application:
+    name: eurka-server
